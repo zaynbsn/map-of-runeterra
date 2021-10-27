@@ -1,0 +1,857 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	user-select: none;
+	}
+@font-face {
+    font-family: 'spiegelregular';
+    src: url('../font/spiegel-webfont.woff2') format('woff2'),
+         url('../font/spiegel-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'optiamwayregular';
+    src: url('../font/optiamway-webfont.woff2') format('woff2'),
+         url('../font/optiamway-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 
+text color : rgba(232,216,185,1)
+button color : #201F1D
+border color : #D69D1B
+*/
+
+html,body{
+		width: 100%;
+		height: 100%;
+	}
+body{
+	position: absolute;
+	font-family: "optiamwayregular", Arial, sans-serif;
+	font-weight: bold;
+	color: rgba(232,216,185,1);
+	filter: grayscale(30%), contrast(0,5);
+	text-align: center;
+	overflow: hidden;
+	letter-spacing: 2px;
+
+}
+#div-logos{
+	display:none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.logo{
+	width:45px;
+	height: 55px;
+	display: block;
+	position:absolute;
+	text-align: center;
+}
+
+.logo img{
+	width: 100%;
+	height: 100%;
+}
+.logo:hover{
+	transition: transform 0.5s;
+	transform: scale(1.3)
+}
+div button{
+	border: none;
+	background-color: transparent;
+	text-decoration: none;	
+}
+/********************************************/
+			/*placement regions*/
+/********************************************/
+	.text-logos{
+		position:absolute;
+		font-size: 18px;
+		pointer-events: none;
+		padding-bottom: 0;
+	}
+	.demacia{
+		top:33%;
+		left:18%;
+	}
+	.demacia-text{
+		top:39%;
+		left:16.3%;
+	}
+	.freljord{
+		top:13%;
+		left:22%;
+	}
+	.freljord-text{
+		top:20%;
+		left:20.2%;
+	}
+	.noxus{
+		top:25%;
+		left:42%;
+	}
+	.noxus-text{
+		top:32%;
+		left:41%;
+	}
+	.ionia{
+		top:13%;
+		left:70%;
+	}
+	.ionia-text{
+		top:20%;
+		left:69.5%;
+	}
+	.targon{
+		top:78%;
+		left:29%;
+	}
+	.targon-text{
+		top:85%;
+		left:27.5%;
+	}
+	.shurima{
+		top:70%;
+		left:45%;
+	}
+	.shurima-text{
+		top:77%;
+		left:43.2%;
+	}
+	.ixtal{
+		top:67%;
+		left:56%;
+	}
+	.ixtal-text{
+		top:74%;
+		left:55.8%;
+	}
+	.piltover{
+		top:45%;
+		left:53%;
+	}
+	.piltover-text{
+		top:47.5%;
+		left:57%;
+	}
+	.zaun{
+		top:51%;
+		left:53%;
+	}
+	.bilgewater{
+		top:55%;
+		left:72%;
+	}
+	.bilgewater-text{
+		top:62%;
+		left:69.3%;
+	}
+	.shadowIsles{
+		top:74%;
+		left:82%;
+	}
+	.shadow-text{
+		top:81%;
+		left:78%;
+	}
+/********************************************/
+			 /*header + titre*/
+/********************************************/
+	#header{
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100px;
+		text-shadow: #201F1D 1px 0 5px;
+		z-index: 1;
+		pointer-events: none;
+
+	}
+
+	.title{
+		font-family: "optiamwayregular", Arial;
+		font-weight: bolder;
+		font-size: 60px;
+		letter-spacing: 1px;
+		word-spacing: 8px;
+		opacity: 0;
+		animation: title 2s;
+		animation-fill-mode: both;
+	}
+
+	@keyframes title{
+		
+		to{
+			/*transform: scale(1.5) translateX(30%) translateY(8%);*/
+			opacity:1;
+		}
+	}
+
+
+	section button {
+		display: none;
+	}
+/*************************************************/
+		 /* BOUTON COMMENCER + ANIMS BOX*/
+/*************************************************/
+	#explorer{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 80%;
+		font-family: "optiamwayregular", Arial, sans-serif;
+	}
+	.bouton-explorer:hover{
+		transition: transform 0.7s;
+		transform: scale(1.2);
+	}
+	#map-general{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: url("../images/runeterra_map.jpg");
+		background-size:cover;
+		background-position: center center;
+		background-repeat:no-repeat;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.bouton-explorer{
+		position:absolute;
+		top: 100%;
+		transition: transform 0.5s;
+		background-color: #201F1D;
+		color: rgba(232,216,185,1);
+		padding: 16px 40px;
+		font-size: 21px;
+		text-align: center;
+		text-decoration: none;
+		border-radius: 0px;
+		border: 2px solid #D69D1B;
+		margin: 30px;
+		font-family: "optiamwayregular", Arial, sans-serif;
+		max-width: 300px;
+		cursor:pointer;
+		user-select: none;
+		z-index: 1;
+		opacity: 0;
+		animation: expl 2s;
+		animation-fill-mode: both;
+	}
+	@keyframes expl{
+		
+		to{
+			/*transform: scale(1.5) translateX(30%) translateY(8%);*/
+			opacity:1;
+			top: calc(50% - 80px);
+		}
+	}
+
+	#box:checked~.bouton-explorer {
+		display: none;
+	}
+	#explorer #box:checked ~ #map-general{
+		transition: transform 0.8s;
+		transform: scale(1.15,1.15);
+	}
+	#explorer #box:checked ~ #map-general #div-logos{
+		display:block;
+	}
+		
+	#explorer #box:checked ~ #map-general #div-logos .logo{
+		display:block;
+		transition:transform 0.5s;
+		transform: opacity:1;
+	}
+	#box{
+		display: none;
+	}
+/*************************************************/
+		/* PRESENTATIONS REGIONS (TARGETS) */
+/*************************************************/
+
+	#target-demacia, #target-freljord, #target-noxus, #target-ionia, #target-targon, #target-shurima, #target-ixtal, #target-piltover-zaun,#target-bilgewater, #target-shadowIsles{
+			display: none;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 3;
+			top: 0;
+		}
+	.region-header{
+		position:absolute;
+		width: 200px;
+		height: 200px;
+		animation: anim 0.7s;
+		animation-fill-mode: both;
+		opacity:0;
+		animation-delay: 1.7s;
+	}
+	.region-header > p{
+		font-family: "optiamwayregular";
+		color:lightgrey;
+		font-weight: bold;
+		font-size:12px;
+		letter-spacing: 1px;
+		word-spacing: 2px;
+		text-shadow: 1px 1px 1px black;
+	}
+	.demacia-header{
+		top:50%;
+		left:35%;
+	}
+	.freljord-header{
+		top:45%;
+		left:40%;
+	}
+	.noxus-header{
+		top:45%;
+		left:40%;
+	}
+	.ionia-header{
+		top:45%;
+		left:40%;
+	}
+	.targon-header{
+		top:45%;
+		left:40%;
+	}
+	.shurima-header{
+		top:45%;
+		left:40%;
+	}
+	.ixtal-header{
+		top:45%;
+		left:40%;
+	}
+	.piltover-header{
+		top:45%;
+		left:40%;
+	}
+	.bilgewater-header{
+		top:35%;
+		left:50%;
+	}
+	.shadow-isles-header{
+		top:35%;
+		left:35%;
+	}
+	@keyframes anim{
+		to{
+			opacity:1;
+
+		}
+	}
+	.illustrations{
+		width: 0px;
+		height: 0px;
+		overflow: hidden;
+		position:absolute;
+		border: 2px solid #D69D1B;
+		border-color: rgba(214, 157,27, 0);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation: illustrations 0.7s; 
+		animation-delay: 1s;
+		opacity:1;
+		animation-fill-mode: both;
+	}
+	@keyframes illustrations{
+		to{
+			width: 30%;
+			height: 35%;
+			border-color: rgba(214, 157,27, 1);
+		}
+	}
+	.illustrations:hover > img{
+		filter:grayscale(1) brightness(0.25);
+		transition: transform 0.7s;
+		transform: scale(1.1);
+	}
+	.illustrations:hover > .description-img{
+		opacity: 1;
+	}
+	.description-img{
+		position:absolute;
+		width: 100%;
+		height: 100%;
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		opacity:0;
+	}
+	h3{
+		font-size:28px;
+		letter-spacing: 0;
+		word-spacing: 2px;
+		font-weight: bold;
+		text-shadow: 1px 1px 1px black;
+	}
+	h5{
+		font-size:24px;
+		letter-spacing: 0;
+		word-spacing: 2px;
+		font-weight: normal;
+		color:rgb(194, 164, 117);
+	}
+	.demacia-img img, .demacia-img2 img, .freljord-img img, .freljord-img2 img, .noxus-img img, .noxus-img2 img, 
+	.ionia-img img, .ionia-img2 img, .ionia-img3 img, .targon-img img, .targon-img2 img,.shurima-img img, 
+	.shurima-img2 img, .shurima-img3 img, .ixtal-img img, .ixtal-img2 img, .piltover-img img, .zaun-img img,
+	.bilgewater-img img, .bilgewater-img2 img, .shadow-isles-img img, .shadow-isles-img2 img{
+		width:100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.demacia-img{
+		top:5%;
+		left:5%;
+	}
+
+	.demacia-img2,.ionia-img3,.shurima-img3,.ixtal-img2,.bilgewater-img2{
+		top:60%;
+		left:60%;
+	}
+	.freljord-img,.noxus-img,.shadow-isles-img{
+		top:60%;
+		left:10%;
+	}
+	.freljord-img2,.noxus-img2,.targon-img2,.shadow-isles-img2{
+		top:10%;
+		left:60%;
+	}
+	.ionia-img,.targon-img,.shurima-img{
+		top:50%;
+		left:5%;
+	}
+
+	.ionia-img2, .shurima-img2{
+		top:5%;
+		left:50%;
+	}
+	.ixtal-img, .bilgewater-img{
+		top:10%;
+		left:5%;
+	}
+	.piltover-img{
+		top:5%;
+		left:55%;
+	}
+	.zaun-img{
+		top:60%;
+		left:5%;
+	}
+
+	.background{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: url(../images/runeterra_map.jpg);
+		background-size: cover;
+		background-position: center center;
+		background-repeat:no-repeat;
+		animation-iteration-count: 1;
+		
+	}
+	#target-demacia .background{
+		animation: zoom 1s;
+		animation-fill-mode: both;
+	}
+	#target-freljord .background{
+		animation: zoomFrel 1s;
+		animation-fill-mode: both;
+	}
+	#target-noxus .background{
+		animation: zoomNoxus 1s;
+		animation-fill-mode: both;
+	}
+	#target-ionia .background{
+		animation: zoomIonia 1s;
+		animation-fill-mode: both;
+	}
+	#target-targon .background{
+		animation: zoomTargon 1s;
+		animation-fill-mode: both;
+	}
+	#target-shurima .background{
+		animation: zoomShurima 1s;
+		animation-fill-mode: both;
+	}
+	#target-ixtal .background{
+		animation: zoomIxtal 1s;
+		animation-fill-mode: both;
+	}
+	#target-piltover-zaun .background{
+		animation: zoomPiltover 1s;
+		animation-fill-mode: both;
+	}
+	#target-bilgewater .background{
+		animation: zoomBilge 1s;
+		animation-fill-mode: both;
+	}
+	#target-shadowIsles .background{
+		animation: zoomShadow 1s;
+		animation-fill-mode: both;
+	}
+@keyframes zoom{
+	from{
+		transform:scale(1.3);
+		opacity:1;
+	}
+	to{
+		transform:scale(3) translateX(28%) translateY(15%);
+		opacity:1;
+		}
+	}
+	@keyframes zoomFrel{
+		from{
+			transform:scale(1.3);
+			opacity:1;
+		}
+		to{
+			transform:scale(3) translateX(25%) translateY(33%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomNoxus{
+		from{
+			transform:scale(1.3);
+			opacity:1;
+		}
+		to{
+			transform:scale(3) translateX(10%) translateY(17%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomIonia{
+		from{
+			transform:scale(1.3);
+			opacity:1;
+		}
+		to{
+			transform:scale(3) translateX(-22%) translateY(30%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomTargon{
+		from{
+			transform:scale(1.3);
+			opacity:1;
+		}
+		to{
+			transform:scale(3) translateX(15%) translateY(-25%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomShurima{
+		from{
+			transform:scale(1.3);
+			opacity:1;
+		}
+		to{
+			transform:scale(3) translateX(1%) translateY(-25%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomIxtal{
+		from{
+			transform:scale(1.3);
+			opacity:1;
+		}
+		to{
+			transform:scale(3) translateX(-10%) translateY(-16%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomPiltover{
+		from{
+			transform:scale(1.3);
+			opacity:1;
+		}
+		to{
+			transform:scale(3) translateX(-6%) translateY(-1%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomBilge{
+		from{
+			transform:scale(1.3);
+			opacity:1;
+		}
+		to{
+			transform:scale(3) translateX(-22%) translateY(-7%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomShadow{
+		from{
+			transform:scale(1.3);
+			opacity:1;
+		}
+		to{
+			transform:scale(3) translateX(-33%) translateY(-24%);
+			opacity:1;
+		}
+	}
+	.fond{
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background-size: cover;
+		background-position: center ;
+		background-repeat:no-repeat;
+		background-color:black; 
+		opacity:0.95;
+		top:0;
+		left:67%;
+		transform: translateX(85%);
+	}
+	.text{
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-align: start;
+		position: absolute;
+		color: rgba(232,216,185,1);
+		opacity:1;
+		padding:60px;
+		left:67%;
+		transform: translateX(85%);
+		top:0;
+		overflow: auto;
+	}
+	
+	.bar-infos{
+		width: 33%;
+		height: 100%;
+		display:block;
+		position: absolute;
+		top:0;
+		left:67%;
+		transform: translateX(90%);
+		z-index: 4;
+		border-left : 1px solid #D69D1B;
+		border-top: none;
+		
+	}
+	.details{
+		width: 10%;
+		height: 100%;
+		background-color: black;
+		display:flex;
+		justify-content: end;
+		align-items: center;
+		position:absolute;
+		opacity: 0.8;
+		top:0;
+		left:0;
+		padding-left:0;
+		padding-top: 0;
+		z-index: 4;
+	}
+	.details img{
+		position:absolute;
+		left:-25px;
+		width:50px;
+		height: 50px;
+		transform: rotate(0);
+		
+	}
+	.link{
+		text-decoration: none;
+		color:rgb(87, 255, 250);
+		font-size: 14px;
+		font-family: "spiegelregular", Helvetica, sans-serif, microsoft yahei;
+		letter-spacing: 0px;
+		display:inline-block;
+		margin-top: 0px;
+		text-shadow: 1px 1px 1px black;
+		font-weight: normal;
+	}
+	.side-logo{
+		position:absolute;
+		width: 50px;
+		height: 60px;
+		top:5%;
+		left:20%;
+	}
+	.separation{
+		width: 80px;
+	  	height: 1px;
+	 	background-color: rgb(166, 158, 146);;
+	 	margin: 6px 0;
+	 	position:absolute;
+	 	left:calc(50% - 40px);	
+	 	display:block;
+	}
+	#div-logos h2{
+		position: absolute;
+		text-align: center;
+		color:rgba(232,216,185,1);
+		text-decoration: none;
+		font-size: 20px;
+		text-shadow: none;
+		margin: 0;
+		padding:0;
+		display:flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.text > p{
+		font-size: 14px;
+		font-family: "spiegelregular", Helvetica, sans-serif, microsoft yahei;
+		text-align: start;
+		letter-spacing: 0px;
+		word-spacing: 0px;
+		font-weight: normal;
+		color:rgb(166, 158, 146);
+		text-shadow: 1px 1px 1px black;
+		line-height:1.7;
+	}
+	h2{
+		text-align: center;
+		padding-top: 24px;
+		padding-right:0;
+		padding-bottom: 24px;
+		text-shadow: 1px 1px 1px black;
+
+	}
+	h4{
+		text-align: center;
+		text-decoration: none;
+		line-height: 1;
+		padding: 15px;
+		font-size: 10px;
+		text-shadow: 0.5px 0.5px 0.5px black
+	}
+
+	
+/*************************************************/
+		  /* ANIMS + TARGETS + RETURN */
+/*************************************************/
+	#target-demacia:target{
+		display: block;
+	}
+	#target-freljord:target{
+		display: block;
+	}
+	#target-noxus:target{
+		display: block;
+	}
+	#target-ionia:target{
+		display: block;
+	}
+	#target-targon:target{
+		display: block;
+	}
+	#target-shurima:target{
+		display: block;
+	}
+	#target-ixtal:target{
+		display: block;
+	}
+	#target-piltover-zaun:target{
+		display: block;
+	}
+	#target-bilgewater:target{
+		display: block;
+	}
+	#target-shadowIsles:target{
+		display: block;
+	}
+
+	.return{
+		display: block;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		z-index: 5;
+	}
+	.return img{
+		width: 100%;
+		height: 100%;
+	}
+	.bar{
+		display:none;
+	}
+	.bar:checked~ .fond{
+		top:0;
+		left:0;
+		transition: transform 1s;
+		transform: translateX(-90%);
+	}
+	.bar:checked~ .text{
+		top:0;
+		left:0;
+		transition: transform 1s;
+		transform: translateX(-90%);
+	}
+	.bar:checked~ .details{
+		background-color: transparent;
+		transition: transform 1s;
+		transform: translateX(-900%);
+	} 
+	.bar:checked~ .details img{		
+		transform: rotate(180deg);
+	}
+	#target-freljord .fond{
+		/*background-image: url("../images/fonds/fond-freljord.jpg");*/
+		background-image: none;
+		background-color: black;
+	}
+	#target-noxus .fond{
+		/*background-image: url("../images/fonds/fond-noxus.jpg");*/
+		background-image: none;
+		background-color: black;
+	}
+	#target-ionia .fond{
+		/*background-image: url("../images/fonds/fond-ionia.jpg");*/
+		background-image: none;
+		background-color: black;
+	}
+	#target-targon .fond{
+		/*background-image: url("../images/fonds/fond-targon.jpg");*/
+		background-image: none;
+		background-color: black;
+	}
+	#target-shurima .fond{
+		/*background-image: url("../images/fonds/fond-shurima.jpg");*/
+		background-image: none;
+		background-color: black;
+	}
+	#target-ixtal .fond{
+		/*background-image: url("../images/fonds/fond-ixtal.jpg");*/
+		background-image: none;
+		background-color: black;
+	}
+	#target-piltover-zaun .fond{
+		/*background-image: url("../images/fonds/fond-piltover.jpg");*/
+		background-image: none;
+		background-color: black;
+	}
+	#target-bilgewater .fond{
+		/*background-image: url("../images/fonds/fond-bilgewater.jpg");*/
+		background-image: none;
+		background-color: black;
+	}
+	#target-shadowIsles .fond{
+		/*background-image: url("../images/fonds/fond-shadow-isles.jpg");*/
+		background-image: none;
+		background-color: black;
+	}
+
+
+

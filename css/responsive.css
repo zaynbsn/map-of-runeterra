@@ -1,0 +1,494 @@
+/*************************************************/
+				/* SCREEN 1024 */
+/*************************************************/
+
+
+@media screen and (max-width:1024px) {
+	
+	body{
+		position: absolute;
+		font-family: "optiamwayregular", Arial, sans-serif;
+		font-weight: bold;
+		color: rgba(232,216,185,1);
+		filter: grayscale(30%), contrast(0,5);
+		text-align: center;
+
+	}
+	#div-logos{
+		display:none;
+	}
+	.logo{
+		display:none;
+	}
+
+	#header{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100px;
+		text-shadow: #201F1D 1px 0 5px;
+
+	}
+
+	.title{
+		font-family: "optiamwayregular", Arial;
+		font-size: 40px;
+		letter-spacing: 2px;
+		word-spacing: 10px;
+	}
+/*************************************************/
+		 /* SECTION + BOUTONS REGIONS- */
+/*************************************************/
+	section{
+		position: absolute;
+		display: grid;
+		grid-template-columns:repeat(4, 1fr);
+		grid-auto-rows:20%;
+		width: 100%;
+		height: calc(100% - 100px);
+		justify-content: center;
+		align-items:center;
+		grid-template-areas:
+			". a b ."
+			". c d ."
+			". e f ."
+			". g h ."
+			". i j .";
+		z-index: 1;
+		top: 100px;
+	}
+
+
+	.demacia{
+  		grid-area: a;
+  		align-self: center;
+  		justify-self: center;	
+  	}
+	.freljord{
+		grid-area: b;
+  		align-self: center;
+  		justify-self: center;	
+
+	}
+	.noxus{
+		grid-area: c;
+  		align-self: center;
+  		justify-self: center;
+
+	}
+	.ionia{
+		grid-area: d;
+  		align-self: center;
+  		justify-self: center;
+
+
+	}
+	.targon{
+		grid-area: e;
+  		align-self: center;
+  		justify-self: center;
+	}
+	.shurima{
+		grid-area: f;
+  		align-self: center;
+  		justify-self: center;
+	}
+	.ixtal{
+		grid-area: g;
+  		align-self: center;
+  		justify-self: center;
+	}
+	.piltover{
+		grid-area: i;
+  		align-self: center;
+  		justify-self: center;
+	}
+	.bilgewater{
+		grid-area: h;
+  		align-self: center;
+  		justify-self: center;
+	}
+	.shadowIsles{
+		grid-area: j;
+  		align-self: center;
+  		justify-self: center;
+	}
+/*************************************************/
+		 /* BOUTON COMMENCER + ANIMS BOX*/
+/*************************************************/
+	.bouton-explorer:hover{
+		transition: transform 0.7s;
+		transform: scale(1.2);
+	}
+	#map-general{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: url("../images/runeterra_map.jpg");
+		background-size:cover;
+		background-position: center center;
+		background-repeat:no-repeat;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.bouton-explorer{
+		transition: transform 0.5s;
+		background-color: #201F1D;
+		color: rgba(232,216,185,1);
+		padding: 16px 40px;
+		font-size: 21px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		border-radius: 0px;
+		border: 2px solid #D69D1B;
+		margin: 30px;
+		font-family: "optiamwayregular", Arial, sans-serif;
+		max-width: 300px;
+		cursor:pointer;
+		user-select: none;
+		z-index: 2;
+	}
+	section button{
+		height: 40px;
+		width: 125px;
+	  	background-color: #201F1D;
+		color: rgba(232,216,185,1);
+		font-size: 16px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		border-radius: 0px;
+		border: 2px solid #D69D1B;
+		margin: 30px;
+		font-family: "optiamwayregular", Arial, sans-serif;
+		max-width: 300px;
+		user-select: none;
+		display: none;
+
+	}
+	section button a{
+		text-decoration: none;
+		color:rgba(232,216,185,1);
+		font-family: "spiegelregular";
+	}
+	#box{
+	display: none;
+	}
+	
+	#box:checked~section button{
+		display: inline-block;
+		transition: transform 1s;
+		transform: scale(1.2);
+	}
+	#explorer #box:checked ~ #map-general #div-logos{
+		display:none;
+	}
+/*************************************************/
+		/* PRESENTATIONS REGIONS (TARGETS) */
+/*************************************************/
+
+	.region-header{
+		position:absolute;
+		width: 200px;
+		height: 200px;
+		top:45%;
+		left:calc(50% - 100px);
+		animation: anim 0.7s;
+		animation-fill-mode: both;
+		opacity:0;
+		animation-delay: 1.7s;
+	}
+	.illustrations{
+
+		animation: illustrations-tel 0.7s; 
+		animation-delay: 1s;
+		opacity:1;
+		animation-fill-mode: both;
+		
+	}
+	@keyframes illustrations-tel{
+		to{
+			width: 300px;
+			height: 200px;
+			border-color: rgba(214, 157,27, 1);
+			
+		}
+	}
+	.demacia-img,.freljord-img ,.noxus-img ,.ionia-img ,.targon-img , .shurima-img3, .ixtal-img,.zaun-img ,.bilgewater-img ,.shadow-isles-img {
+		top:10%;
+		left:calc(50% - 150px);
+	}
+	.demacia-img2,.freljord-img2 ,.noxus-img2 , .ionia-img2,.targon-img2 ,.shurima-img2,.ixtal-img2 ,.piltover-img , .bilgewater-img2,.shadow-isles-img2{
+		top:60%;
+		left:calc(50% - 150px);
+	}
+	.noxus-img3{
+		top:60%;
+		left:10%;
+		opacity : 0;
+	}
+	.ionia-img3{
+		top:60%;
+		left:100%;
+		opacity : 0;
+	}
+	.shurima-img{
+		top:10%;
+		left:10%;
+		opacity: 0;
+	}
+
+	.background{
+		position: absolute;
+		top:calc(50% - 930px);
+		left:calc(50% - 910px);
+		width: 1820px;
+		height: 1860px;
+		background-image: url(../images/runeterra_map.jpg);
+		background-position:center center;
+		background-repeat:no-repeat;
+		animation-iteration-count: 1;
+	}
+	#target-demacia .background{
+	animation: zoom 1s;
+	animation-fill-mode: both;
+	}
+	#target-freljord .background{
+		animation: zoomFrel 1s;
+		animation-fill-mode: both;
+	}
+	#target-noxus .background{
+		animation: zoomNoxus 1s;
+		animation-fill-mode: both;
+	}
+	#target-ionia .background{
+		animation: zoomIonia 1s;
+		animation-fill-mode: both;
+	}
+	#target-targon .background{
+		animation: zoomTargon 1s;
+		animation-fill-mode: both;
+	}
+	#target-shurima .background{
+		animation: zoomShurima 1s;
+		animation-fill-mode: both;
+	}
+	#target-ixtal .background{
+		animation: zoomIxtal 1s;
+		animation-fill-mode: both;
+	}
+	#target-piltover-zaun .background{
+		animation: zoomPiltover 1s;
+		animation-fill-mode: both;
+	}
+	#target-bilgewater .background{
+		animation: zoomBilge 1s;
+		animation-fill-mode: both;
+	}
+	#target-shadowIsles .background{
+		animation: zoomShadow 1s;
+		animation-fill-mode: both;
+	}
+
+@keyframes zoom{
+		from{
+			transform:scale(0.5);
+		}
+		to{
+			transform: scale(1.5) translateX(30%) translateY(8%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomFrel{
+		from{
+			transform:scale(0.5);
+		}
+		to{
+			transform: scale(1.5) translateX(25%) translateY(15%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomNoxus{
+		from{
+			transform:scale(0.5);
+		}
+		to{
+			transform: scale(1.5) translateX(9%) translateY(10%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomIonia{
+		from{
+			transform:scale(0.5);
+		}
+		to{
+			transform: scale(1.5) translateX(-22%) translateY(17%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomTargon{
+		from{
+			transform:scale(0.5);
+		}
+		to{
+			transform: scale(1.5) translateX(15%) translateY(-20%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomShurima{
+		from{
+			transform:scale(0.5);
+		}
+		to{
+			transform: scale(1.5) translateX(0%) translateY(-15%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomIxtal{
+		from{
+			transform:scale(0.5);
+		}
+		to{
+			transform: scale(1.5) translateX(-10%) translateY(-13%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomPiltover{
+		from{
+			transform:scale(0.5);
+		}
+		to{
+			transform: scale(1.5) translateX(-4%) translateY(-3%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomBilge{
+		from{
+			transform:scale(0.5);
+		}
+		to{
+			transform: scale(1.5) translateX(-22%) translateY(-7%);
+			opacity:1;
+		}
+	}
+	@keyframes zoomShadow{
+		from{
+			transform:scale(0.5);
+		}
+		to{
+			transform: scale(1.5) translateX(-36%) translateY(-17%);
+			opacity:1;
+		}
+	}
+	.fond{
+		top:0;
+		left:0;
+		transform: translateY(95%);
+	}
+	.text{
+		display: block;
+		width: 100%;
+		height: 95%;
+		text-align: justify;
+		position: absolute;
+		color: rgba(232,216,185,1);
+		opacity:1;
+		padding:24px;
+		transform: translateY(95%);
+		top:5%;
+		left:0;
+		overflow:auto;
+	}
+	.bar-infos{
+		width: 100%;
+		left:0;
+		transform:translateY(95%);
+		border-top : 1px solid #D69D1B;
+		border-left: none;
+	}
+	.details{
+		height: 10%;
+		width:100%;
+		display:flex;
+		justify-content: center;
+		align-items: start;
+	}
+	.details img{
+		position:absolute;
+		left:calc(50% - 25px);
+		top:-25px;
+		height:50px ;
+		width:50px ;
+		transform: rotate(90deg);
+	}
+
+	.side-logo{
+		top:-1%;
+		left:calc(50% - 25px);
+	}
+
+	p{
+		font-size: 14px;
+		font-family: "spiegelregular", Helvetica, sans-serif, microsoft yahei;
+		color:rgb(166, 158, 146);;
+		text-shadow: 1px 1px 1px black;	
+
+	}
+	h4{
+		text-align: left;
+		line-height: 1;
+		padding: 5px;
+		text-shadow: 1px 1px 1px black;
+	}
+	h2{
+		text-align: center;
+		padding-top: 24px;
+		padding-right:0;
+		padding-bottom: 24px;
+		text-shadow: 1px 1px 1px black;
+	}
+	h5{
+		font-size:16px;
+		letter-spacing: 0;
+		word-spacing: 2px;
+		font-weight: normal;
+		color:rgb(194, 164, 117);
+	}
+
+
+/*************************************************/
+		  /* ANIMS + TARGETS + RETURN */
+/*************************************************/
+
+	.return{
+		width: 24px;
+		height: 24px;
+
+	}
+	
+	.bar:checked~ .fond{
+		transition: transform 1s;
+		transform: translateY(-90%);
+	}
+	.bar:checked~ .text{
+		top:0;
+		left:0;
+		transition: transform 1s;
+		transform: translateY(-90%);
+	}
+	.bar:checked~ .details{
+		background-color: transparent;
+		transition: transform 1s;
+		transform: translateY(-900%);
+	}
+	.bar:checked~ .details img{
+		transform: rotate(270deg);
+	}
+
+	
+}
